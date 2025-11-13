@@ -1,0 +1,6 @@
+@visu_backend_HostAddress = http://localhost:5208
+
+GET {{visu_backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

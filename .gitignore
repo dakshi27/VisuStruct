@@ -1,0 +1,46 @@
+# ---- General ----
+*.log
+*.tmp
+*.swp
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.DS_Store
+Thumbs.db
+
+# ---- Node / Angular ----
+node_modules/
+dist/
+tmp/
+out-tsc/
+.angular/
+coverage/
+
+# ---- ASP.NET Core / C# ----
+bin/
+obj/
+Debug/
+Release/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.config
+*.dbmdl
+*.bak
+*.mdf
+*.ldf
+
+# ---- Visual Studio ----
+.vs/
+*.vscode/
+*.ncrunchsolution
+*.ncrunchproject
+_ReSharper.Caches/
+*.resharper
+*.sln.ide
+
+# ---- Other ----
+.env
+
