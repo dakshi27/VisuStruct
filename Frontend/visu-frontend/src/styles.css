@@ -7,6 +7,15 @@ body {
   font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
 }
 
-* {
-  transition: background-color 0.3s ease, color 0.3s ease;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
+
+*{
+  transition: background-color 0.7s ease, color 0.7s ease;
+}
+
+
