@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
   editor: monaco.editor.IStandaloneCodeEditor | undefined;
 
   ngOnInit() {
+  setTimeout(() => {
     this.editor = monaco.editor.create(document.getElementById('editor')!, {
       value: `// Write your C# linked list code here
 class Node {
@@ -24,7 +25,9 @@ class Node {
       theme: 'vs-dark',
       automaticLayout: true
     });
-  }
+  }, 0);
+}
+
 
   saveCode() {
     const code = this.editor?.getValue();
@@ -63,12 +66,22 @@ class Node {
 }
 
 toggleTheme() {
-  const html = document.querySelector('html');
-  if (html?.classList.contains('dark')) {
-    html.classList.remove('dark');
+  const body = document.querySelector('body');
+  if (!body) return; // safety check
+
+  const isDark = body.classList.contains('dark');
+
+  if (isDark) {
+    body.classList.remove('dark');
+    monaco.editor.setTheme('vs'); // switch to light
   } else {
-    html?.classList.add('dark');
+    body.classList.add('dark');
+    monaco.editor.setTheme('vs-dark'); // switch to dark
   }
+
+  this.editor?.layout(); // re-layout editor
 }
+
+
 
 }
