@@ -26,26 +26,49 @@ class Node {
     });
   }
 
+  saveCode() {
+    const code = this.editor?.getValue();
+    console.log("Saved code:", code);
+  }
+
+  clearCode() {
+    this.editor?.setValue("");
+  }
+
+  resetCode() {
+    this.editor?.setValue(`// Write your C# linked list code here
+class Node {
+    public int Value;
+    public Node Next;
+    public Node(int value) {
+        Value = value;
+        Next = null;
+    }
+}`);
+  }
+
   runCode() {
     const code = this.editor?.getValue();
     console.log("Code executed:", code);
 
-    // Simulate adding a node visually
     const randomValue = Math.floor(Math.random() * 100);
     this.renderNode(randomValue);
   }
 
   renderNode(value: number) {
-    const div = document.createElement("div");
-    div.innerText = value.toString();
-    div.style.border = "1px solid black";
-    div.style.borderRadius = "8px";
-    div.style.padding = "10px";
-    div.style.margin = "5px";
-    div.style.backgroundColor = "#f0f0f0";
-    div.style.fontWeight = "bold";
-    div.style.minWidth = "40px";
-    div.style.textAlign = "center";
-    document.getElementById("visualizer")?.appendChild(div);
+  const div = document.createElement("div");
+  div.innerText = value.toString();
+  div.className = "bg-gray-100 text-gray-900 px-4 py-2 rounded-lg shadow-md border border-gray-300 font-semibold";
+  document.getElementById("visualizer")?.appendChild(div);
+}
+
+toggleTheme() {
+  const html = document.querySelector('html');
+  if (html?.classList.contains('dark')) {
+    html.classList.remove('dark');
+  } else {
+    html?.classList.add('dark');
   }
+}
+
 }
